@@ -41,10 +41,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown messages-menu">
                         <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span class="label label-success  label-vea">4</span>
-                        </a>
+                        <a href="#" class="dropdown-toggle" data-target="#" data-toggle="dropdown">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <span class="label label-success  label-vea">4</span>
+                        <ul class="dropdown-menu">
+                            #
+                        </ul>
                     </li>
                     {{> loginButtons}} <!-- here -->
                     {{#if currentUser}}
@@ -59,7 +61,8 @@
     <div class="container">
         {{> Template.dynamic template=content}} <!--put content here!-->
         <footer>
-            <p class="text-center text-primary" style="color: #00796b">&copy; 2016 Drink Product Management System, Inc.</p>
+            <p class="text-center text-primary" style="color: #00796b">&copy; 2016 Drink Product Management System,
+                Inc.</p>
         </footer>
     </div>
     </body>
