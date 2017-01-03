@@ -1,0 +1,9 @@
+.hvr-icon-buzz-out:before {
+    content: "\f000";
+    position: absolute;
+    right: 1em;
+    padding: 0 1px;
+    font-family: FontAwesome;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}

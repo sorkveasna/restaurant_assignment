@@ -1,0 +1,48 @@
+<!--<head>-->
+    <!--<link rel="icon" href="favicon.ico">-->
+    <!--<title>Rabbit IT Solution</title>-->
+<!--</head>-->
+
+<!--<template name="mainLayout">-->
+    <!--<body class="flat-blue">-->
+
+    <!--&lt;!&ndash;sAlert&ndash;&gt;-->
+    <!--&lt;!&ndash;{{>sAlertCustom}}&ndash;&gt;-->
+
+    <!--<div class="app-container">-->
+        <!--<div class="row content-container">-->
+
+            <!--&lt;!&ndash;navbar&ndash;&gt;-->
+            <!--{{>flatAdmin_Navbar}}-->
+
+            <!--&lt;!&ndash;sidebar&ndash;&gt;-->
+            <!--{{>flatAdmin_Sidebar}}-->
+
+            <!--&lt;!&ndash; Main Content &ndash;&gt;-->
+            <!--<div class="container-fluid">-->
+                <!--<div class="side-body padding-top">-->
+
+                    <!--{{#if currentUser}}-->
+                        <!--{{#if isInRole 'Data' 'Report' 'Setting' 'super'}}-->
+                            <!--<div class="row">-->
+                                <!--<legend style="font-size: 28px; font-weight: bold"-->
+                                        <!--class="animated fadeInUp">-->
+                                    <!--{{pageHeader}}-->
+                                <!--</legend>-->
+                            <!--</div>-->
+                        <!--{{/if}}-->
+                    <!--{{/if}}-->
+
+                    <!--{{> Template.dynamic template=content}}-->
+
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+
+        <!--&lt;!&ndash;footer&ndash;&gt;-->
+        <!--{{>flatAdmin_Footer}}-->
+    <!--</div>-->
+    <!--{{> meteorStatus}}-->
+    <!--</body>-->
+<!--</template>-->

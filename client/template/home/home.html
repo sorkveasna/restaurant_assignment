@@ -1,0 +1,68 @@
+<!--Index-->
+<template name="home">
+    {{#if currentUser}}
+        {{#if isInRole 'Data' 'Report' 'Setting' 'super'}}
+            {{>dashboard}}
+        {{else}}
+            {{> welcome_screen}}
+        {{/if}}
+    {{else}}
+        {{> welcome_screen}}
+    {{/if}}
+</template>
+
+<!--welcome screen-->
+<template name="welcome_screen">
+    <!--Server date time-->
+    <h3 class="text-center">
+        <span class="label label-{{serverDateTime.css}}">
+            <i class="fa fa-calendar"></i> {{serverDateTime.val}}
+        </span>
+    </h3>
+
+    <div class="jumbotron">
+        <h1>
+            <img style="display: inline-block; margin-bottom: 8px" alt="Apple" width="50" height="50"
+                 src="/apple.png">
+            Rabbit IT Solution
+        </h1>
+
+        <h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul style="list-style-type:square">
+                        <li>Computer Training</li>
+                        <li>Application Development</li>
+                        <li>Web Design</li>
+                        <li>IT Consultancy</li>
+                        <li>Network</li>
+                        <li>Maintenance</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul style="list-style-type:square">
+                        <li>Loan Management System</li>
+                        <li>Saving Management System</li>
+                        <li>Accounting Management System</li>
+                        <li>School Management System</li>
+                        <li>Hospital Management System</li>
+                        <li>Ice Factory Management System</li>
+                    </ul>
+                </div>
+            </div>
+        </h3>
+
+    </div>
+</template>
+
+<!--welcome_accessDenied-->
+<template name="accessDenied">
+    <br>
+    <br>
+    <div class="alert alert-danger" role="alert">
+        <h2>[403]</h2>
+        <p>
+            Sorry, you couldn't access this application. Please contact administrator.
+        </p>
+    </div>
+</template>

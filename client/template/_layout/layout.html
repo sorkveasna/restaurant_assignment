@@ -1,0 +1,66 @@
+<head>
+    <link rel="icon" href="/apple.png">
+    <title>Drink Product Management</title>
+</head>
+
+<template name="mainLayout">
+    <body style="margin-top: 85px">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-primary" style="background: #00796b; border: #00796b">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{pathFor 'home'}}" style="font-size: 20px"><i
+                        class="fa fa-beer fa-lg"></i> Fast Food Resturant</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    {{#if currentUser}}
+                        <!--Setting-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle"
+                                   data-toggle="dropdown">Setting
+                                    <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{pathFor 'table'}}">Table</a></li>
+                                    <li><a href="{{pathFor 'tags'}}">Food Tags</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <li><a href="{{pathFor 'order'}}">Order</a></li>
+                        <li><a href="{{pathFor 'products'}}">Products</a></li>
+                        <li><a href="{{pathFor 'userToRole'}}">Users</a></li>
+                    {{/if}}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown messages-menu">
+                        <!-- Menu toggle button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <span class="label label-success  label-vea">4</span>
+                        </a>
+                    </li>
+                    {{> loginButtons}} <!-- here -->
+                    {{#if currentUser}}
+                        <li><a href="{{pathFor 'aboutUs'}}"><i class="fa fa-users"></i></a></li>
+                    {{/if}}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {{> Template.dynamic template=content}} <!--put content here!-->
+        <footer>
+            <p class="text-center text-primary" style="color: #00796b">&copy; 2016 Drink Product Management System, Inc.</p>
+        </footer>
+    </div>
+    </body>
+</template>

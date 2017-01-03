@@ -1,0 +1,76 @@
+<!--table-->
+<template name="table">
+    <h1 style="font-size: 40px; font-weight: bold; color: #00796b" class="text-primary page-header top">Tables</h1>
+    {{> add_button}}
+    {{> tabular table=TabularTables.Table class="table table-striped table-bordered table-condensed table-hover animated fadeInUp"}}
+</template>
+
+<template name="tableInsert">
+    {{#autoForm collection="Collection.Table" id="tableInsert" type="insert"}}
+        <fieldset>
+            <div class="row">
+                <div class="col-md-4">
+                    {{> afQuickField name='tableNum'}}
+                </div>
+                <div class="col-md-4">
+                    {{> afQuickField name='chair'}}
+                </div>
+                <div class="col-md-4">
+                    {{> afQuickField name='location'}}
+                </div>
+                <div class="col-md-12">
+                    {{> afQuickField name='des'}}
+                </div>
+            </div>
+        </fieldset>
+        {{>saveAndReset_button}}
+    {{/autoForm}}
+</template>
+
+<!--Update-->
+<template name="tableUpdate">
+    {{#autoForm collection="Collection.Table" doc=this id="tableUpdate" type="update"}}
+        <fieldset>
+            <div class="row">
+                <div class="col-md-4">
+                    {{> afQuickField name='tableNum'}}
+                </div>
+                <div class="col-md-4">
+                    {{> afQuickField name='chair'}}
+                </div>
+                <div class="col-md-4">
+                    {{> afQuickField name='location'}}
+                </div>
+                <div class="col-md-12">
+                    {{> afQuickField name='des'}}
+                </div>
+            </div>
+        </fieldset>
+        {{> update_button}}
+    {{/autoForm}}
+</template>
+
+<!--Action-->
+<template name="tableAction">
+    {{>tabularAction}}
+</template>
+
+<!--Show-->
+<template name="tableShow">
+    <dl class="dl-horizontal">
+        <dt>ID:</dt>
+        <dd>{{_id}}</dd>
+
+        <dt>Table Number:</dt>
+        <dd>{{name}}</dd>
+
+        <dt>Chiar:</dt>
+        <dd>{{chair}}</dd>
+
+        <dt>Location:</dt>
+        <dd>{{location}}</dd>
+
+        <dt>Description:</dt>
+        <dd>{{des}}</dd>
+    </dl>
+</template>
